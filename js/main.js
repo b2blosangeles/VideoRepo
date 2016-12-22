@@ -3,7 +3,7 @@ var app = angular.module('videoRepo', [
 	'ngRoute'
 ]);
 app.controller('mainController', function($rootScope, $scope, $location, $http, $cookies, $timeout, $interval, $sce){ 
-	$rootScope.serverName = 'http://vr.qalet.com';
+	$rootScope.serverName = '';
 	$scope.list = {};
 	$scope.$watch(
  		function () {
