@@ -1,0 +1,14 @@
+<ng-repeat ng-repeat="item in list" ng-if="item.vid != main_video.vid && item.status == 8">  
+         <table width="200" height="210" style="float:left; margin:6px; margin-top:12px; background-color:#ccc">
+             <tr>
+                 <td width="200" valign="top" align="left">
+                    <a href="/#/home/{{item.vid}}">
+                        <img ng-src="{{itemImage(item)}}" width="200"><br>
+                     </a>   
+                     <div style="padding:6px; font-size:0.85em">
+                           {{item.title|cut:true:200:' ...'}}
+                     </div>         
+                 </td>
+             </tr>    
+         </table>  
+</ng-repeat>

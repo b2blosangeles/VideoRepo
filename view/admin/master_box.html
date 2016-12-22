@@ -1,0 +1,47 @@
+<div class="admin-form">                             
+       <table width="100%">
+                <tr>  
+                    <td valign="middle" align="right">
+                           <i class="fa fa-arrow-circle-up" aria-hidden="true" ng-click="setAdminItem()"></i>
+                    </td>                                                      
+                </tr>    
+      </table>                                  
+</div>
+<table width="99%" align="center">
+    <tr>
+        <td width="308" valign="top">
+            
+            <ul class="list-group">
+              <li class="list-group-item" data-ng-repeat="(k, v) in admin_options">
+                  <a href="JavaScript:void(0)" ng-if="k !== _adminOption" ng-click="setAdminItem(_adminItem, k)">{{v}}</a>
+                  <b ng-if="k == _adminOption">{{v}}</b>
+                  <i class="fa fa-angle-double-right pull-right" ng-if="k == _adminOption" aria-hidden="true"></i>
+                  <i class="fa fa-angle-down pull-right" ng-if="k !== _adminOption" aria-hidden="true"></i>
+              </li>
+            </ul>            
+            
+            <h4>{{_adminItem.title}}</h4>
+            <div>
+                  <div style="width:300px;"></div>
+                  <img  ng-src="{{itemImage(_adminItem)}}" width="300">    
+            </div>
+            <p style="padding-top:12px; padding-bottom:0px;">
+                  {{_adminItem.description}}
+            </p> 
+            <span class="success-color-dark pull-left" style="font-size:0.9em;">updated:{{timestampToDateTime(_adminItem.updated)}}</span>   
+       </td>
+       <td width="12"></td>
+       <td valign="top">
+            <h4 class="warning-color" style="padding-left:1em">
+                <i class="fa fa-angle-double-right" aria-hidden="true"></i> 
+                <a href="JavaScript:void(0)"  ng-Click="setAdminItem()" class="warning-color-dark">
+                    Admin</a>  
+                &nbsp;&nbsp;<i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;&nbsp;
+                 {{admin_options[_adminOption]}}
+            </h4> 
+                      
+            <admin-default-image ng-if="_adminOption == 'default_image'"></admin-default-image>
+            <admin-editor ng-if="_adminOption == 'admin_editor'"></admin-editor>
+        </td>        
+    </tr>    
+</table>

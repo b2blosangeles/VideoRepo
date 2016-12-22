@@ -1,0 +1,29 @@
+<div class="container">
+         <div class="row">
+                  <table width="100%">
+                      <tr>                             
+                          <td valign="top" align="center">
+                             <div class="alert alert-success" role="alert" style="margin-top:6px; margin-bottom:0px; text-align:left">
+                                     View style: 
+                                      &nbsp;
+                                      <a href="JavaScript:void(0)" ng-click="setViewStyle('list')" ng-show="!viewItemShow('list')">
+                                               <i class="fa fa-list warning-color-dark" aria-hidden="true"></i>
+                                      </a>
+                                      <i class="fa fa-list  default-color" aria-hidden="true" ng-show="viewItemShow('list')"></i>
+                                      &nbsp; 
+                                      <a href="JavaScript:void(0)" ng-click="setViewStyle('icons')" ng-show="!viewItemShow('icons')">
+                                               <i class="fa fa-th warning-color" aria-hidden="true"></i>
+                                      </a>
+                                       <i class="fa fa-th  default-color" aria-hidden="true" ng-show="viewItemShow('icons')"></i>
+                            </div>                            
+                             <item-list ng-show="viewItemShow('list')"></item-list>  
+                             <item-list-icons ng-show="viewItemShow('icons')"></item-list-icons>       
+                          </td>  
+                         <td width="6"></td>
+                          <td width="308" valign="top" ng-style="styleSideVideo()">
+                              <item-main-video></item-main-video>    
+                          </td>
+                      </tr>    
+                  </table>
+         </div>         
+</div>

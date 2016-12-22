@@ -1,0 +1,21 @@
+<!-- Modal -->
+<div id="admin_modal" class="modal fade modal-object" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" ng-if="popup_module=='delete'">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button-->
+        <h4 class="modal-title" id="myModalLabel">Are you sure you want delete the video?</h4>
+      </div>
+      <div class="modal-body">
+        {{item_need_delete.title}}<br>
+    <img  ng-src="{{itemImage(item_need_delete)}}">      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" ng-click="turnOffDelete()">No! Cancel delete.</button>
+        <button type="button" class="btn btn-primary" ng-click="deleteRec()">Confirm delete</button>
+      </div>
+    </div>
+  </div>
+</div>

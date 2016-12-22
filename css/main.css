@@ -1,0 +1,73 @@
+body { min-width:900px;  max-width:1200px; margin:auto; overflow-y: scroll;}
+.center { max-width:1200px; margin:auto; }
+
+.right-to-left { margin-top: 10px; }
+.right-to-left li { float: right; }
+
+li.left-to-right  { float: left; }
+
+.video-list { border:1px solid #e0fae0; padding:0px; padding-top:6px; margin:6px; border-radius: 5px 5px 5px 5px;}
+.admin-item { border-bottom:1px dashed #ddd; padding:6px; margin:6px; }
+
+.admin-form { border:1px solid #ccc; padding:6px; margin:6px; border-radius: 5px 5px 5px 5px; background-color:#ddd}
+
+.odd {background-color:#f4fdf4; }
+.even {background-color:#eafbea;}
+video {}
+
+.video-round-frame {
+	 background-color:#333; border-radius: 5px 5px 5px 5px; padding:6px;  margin-top:6px; text-align:center
+}
+
+.success-color-dark { color:#007E33}
+.info-color-dark { color:#0099CC}
+.warning-color-dark { color:#FF8800}
+.danger-color-dark { color:#CC0000}
+.default-color-dark { color:#cccccc}
+
+.success-color { color:#00C851}
+.info-color { color:#33b5e5}
+.warning-color { color:#ffbb33}
+.danger-color { color:#ff4444}
+.default-color { color:#dddddd}
+
+/*
+danger-color
+
+#ff4444
+
+warning-color
+
+#ffbb33
+
+
+success-color
+
+#00C851
+
+info-color
+
+#33b5e5
+
+-----------
+
+danger-color-dark
+
+#CC0000
+
+warning-color-dark
+
+#FF8800
+
+
+success-color-dark
+
+#007E33
+
+
+info-color-dark
+
+#0099CC
+
+------------
+*/

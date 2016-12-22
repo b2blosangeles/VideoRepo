@@ -1,0 +1,17 @@
+<ng-repeat ng-repeat="item in list" ng-if="item.vid != main_video.vid && item.status == 8">
+  <div ng-class-odd="'video-list odd'" ng-class-even="'video-list even'">   
+     <table width="99%">
+         <tr>
+             <td width="180" valign="top" align="left">
+                <a href="/#/home/{{item.vid}}">
+                    <img ng-src="{{itemImage(item)}}" width="170">
+                </a>
+             </td>
+             <td valign="top">
+                 <b>{{item.title}}</b><br>
+                 {{item.description | limitTo: 256}}
+             </td>
+         </tr>    
+     </table>
+  </div>   
+</ng-repeat>  

@@ -1,0 +1,20 @@
+<table width="118" style="float:left; margin:6px; margin-top:12px;  background-color:ccc">
+ <tr>
+     <td width="118" valign="top" align="center">
+        <a href="JavaScript:void(0)" ng-click="setupThumbnail('')">
+            <img ng-src="/images/loop_non.png" width="100" ng-style="styleDefaultThumbnail('')"><br>
+         </a>         
+     </td>
+ </tr>    
+</table>            
+<div data-ng-repeat="i in [] | range:59">
+      <table width="118" style="float:left; margin:6px; margin-top:12px;  background-color:ccc">
+         <tr>
+             <td width="118" valign="top" align="center">
+                <a href="JavaScript:void(0)" ng-click="setupThumbnail(i)">
+                    <img ng-src="{{itemImage(_adminItem, i)}}" width="100" ng-style="styleDefaultThumbnail(i)" ><br>
+                 </a>         
+             </td>
+         </tr>    
+     </table> 
+</div>

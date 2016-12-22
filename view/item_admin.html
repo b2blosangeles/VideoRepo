@@ -1,0 +1,53 @@
+<ng-repeat ng-repeat="item in list | orderBy : '-updated'">
+   <div class="admin-item">   
+      <table width="100%" align="center">
+          <tr>  
+              <td valign="top" align="center" width="160">
+                 <!--a href="JavaScript:void(0);" ng-if="item.doneImage==1 && item.status==8" ng-click="setAdminItem(item)"-->
+                     <img  ng-if="item.doneImage==1 && item.status==8"  ng-src="{{itemImage(item)}}" width="120">
+                 <!--/a-->
+                 <item-admin-loading-status ng-if="item.status != 8 || item.doneImage != 1"></item-admin-loading-status>
+              </td>             
+              <td valign="top" align="left">
+                     <div ng-if="item.status!=0"> 
+                          <b>{{item.title.trim()}}</b>  
+                           <br/>
+                          <span ng-if="more_section !=item.vid">{{item.description | limitTo: 256}}
+                              <span ng-if="item.description.length > 256 && more_section !=item.vid">... <a href="JavaScript:void(0);" ng-click="setMoreSection(item.vid)">More</a></span>
+                          </span>
+                          <span ng-if="more_section == item.vid">{{item.description}}
+                              <span ng-if="item.description.length > 256 && more_section == item.vid"> <a href="JavaScript:void(0);" ng-click="setMoreSection('')">Less</a></span>
+                          </span>
+                        
+                          <br/>
+                        
+                          <div style="text-align:left;font-size:1.1em">
+                               <a type="button" href="JavaScript:void(0);" ng-click="deleteVideo(item)">
+                                   <i class="fa fa-trash warning-color-dark"></i></a> 
+                                <span style="color:#ccc"> &nbsp;|&nbsp;</span>
+                                <a type="button" href="JavaScript:void(0);" ng-click="setAdminItem(item, '')">
+                                    <i class="fa fa-pencil warning-color-dark"></i></a> 
+                               <span style="color:#ccc" ng-if="item.doneImage==1 && item.status==8">&nbsp;|&nbsp;</span>
+                                 <a href="JavaScript:void(0);" ng-if="item.doneImage==1 && item.status==8" ng-click="switchVideo(item)">
+                                  <i class="fa fa-youtube-play warning-color-dark"></i></a>                              
+                              <!--span style="color:#ccc"> &nbsp;|&nbsp;</span-->
+                              <span class="success-color-dark pull-right" style="font-size:0.9em;">Last updated:{{timestampToDateTime(item.updated)}}</span>
+                          </div>                 
+                     </div>
+                     <div ng-if="item.status == 0"> 
+                          <b>Requested youtube video code:</b>({{item.vid}})<br/>
+                          <span class="success-color-dark" style="font-size:0.9em;">
+                             Your download request has been added to the download queue at {{timestampToDateTime(item.updated)}}.
+                        </span>
+                     </div>
+                     <div ng-if="item.status == 7 || item.status == 9"> 
+                          <b>Requested youtube video code:</b>({{item.vid}})<br/>
+                          <span class="danger-color-dark" style="font-size:0.9em;">
+                             Your download request failed. Please check your URL and try again.
+                        </span>
+                     </div>  
+              </td>            
+          </tr>    
+      </table>
+   </div>   
+</ng-repeat> 

@@ -1,0 +1,34 @@
+ <table width="120" height="68" style="background-color:#ddd; border:1px solid #ccc">
+    <tr>
+       <td align="center" valign="middle">
+
+           <div class="warning-color-dark" ng-if="item.doneImage != 1 && item.status==8">
+              <i class="fa fa-camera" aria-hidden="true"></i>
+              Processing<br/>
+              <img src="/images/video_loader.gif"/>
+           </div> 
+
+          <div class="warning-color-dark" ng-if="item.status==1">
+              <i class="fa fa-download" aria-hidden="true"></i>
+              Downloading<br/>
+              <img src="/images/video_loader.gif"/>
+           </div>
+
+           <div class="danger-color-dark" ng-if="item.status==9">
+                   <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                   Failed
+           </div>   
+
+          <div class="danger-color-dark" ng-if="item.status==7">
+                   <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                  Timeout
+           </div> 
+
+          <div class="warning-color-dark" ng-if="item.status==0">
+                   <i class="fa fa-flag" aria-hidden="true"></i>
+                  Pending
+           </div> 
+
+       </td>
+    </tr>
+ </table>

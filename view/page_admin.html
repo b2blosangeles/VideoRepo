@@ -1,0 +1,36 @@
+<div class="admin-form" ng-style="videoUrlStyle()">                            
+       <table width="100%">
+                <tr>  
+                    <td width="6"></td>
+                    <td valign="middle" align="left" width="80">
+                        Add video:
+                    </td>             
+                    <td valign="middle" align="left">
+                        <input type="text" name="video_url" class="form-control"
+                               placeholder="video Url" ng-model="videourl" />
+                    </td>
+                    <td width="6"></td>     
+                    <td valign="middle" align="left"  width="300">
+                            <button ng-if="isSubmitAble()" class="btn btn-warning" ng-Click="submitAddVid()">Add Video</button>
+                            <span ng-if="isExistVID()" class="danger-color-dark">Video exist on your list.</span>
+                    </td>                                                      
+                </tr>    
+      </table>                                  
+</div>
+<div class="container">
+         <div class="row">
+                  <table width="100%">
+                      <tr>
+                          <td valign="top" align="center">
+                             <admin-item  ng-if="!_adminItem"></admin-item>  
+                             <admin-master-box  ng-if="(_adminItem)"></admin-master-box>       
+                          </td>  
+                         <td width="6" ng-style="styleSideVideo()"></td>
+                          <td width="308" valign="top" ng-style="styleSideVideo()">
+                              <item-main-video></item-main-video>
+                         </td>
+                      </tr>    
+                  </table>
+         </div>         
+</div>
+<admin_modal-object></admin_modal-object>
